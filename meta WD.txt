@@ -1,0 +1,10 @@
+.eslintignore
+*.txt
+.gitmodules
+.jshintignore
+.node-version
+.npmignore
+.npmrc
+.nvmrc
+.stylelintignore
+.yarnrc
