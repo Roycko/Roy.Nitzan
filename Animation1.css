@@ -1,0 +1,15 @@
+div{
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+}
+button{
+    background-color: aquamarine;
+    animation-name: blink;
+    animation-duration: 2000ms;
+    height: 300px;
+    width: 300px;
+    animation-iteration-count: infinite;
+}
+
+

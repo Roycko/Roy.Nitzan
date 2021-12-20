@@ -1,0 +1,28 @@
+<header>
+    <div class="top-header-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 text-center">
+                    <nav class="main-menu">
+                         <ul>
+                             <li {% if request.path =='/' %}class="current-list-item" {% endif %}><a href="/">Home</a></li>
+                             <li {% if request.path =='/about' %}class="current-list-item" {% endif %}><a href="/about">About</a></li>
+                             <li {% if request.path =='/darkroom' %}class="current-list-item" {% endif %}><a href="/darkroom">Dark Room</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grey-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 offset-lg-0 text-center">
+					<div class="grey-text">
+							<p class="subtitle">Roy flask project</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
