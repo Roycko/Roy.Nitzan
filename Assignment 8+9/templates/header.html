@@ -8,6 +8,12 @@
                              <li {% if request.path =='/' %}class="current-list-item" {% endif %}><a href="/">Home</a></li>
                              <li {% if request.path =='/about' %}class="current-list-item" {% endif %}><a href="/about">About</a></li>
                              <li {% if request.path =='/darkroom' %}class="current-list-item" {% endif %}><a href="/darkroom">Dark Room</a></li>
+                            {% if  session.username %}
+                                <li> Welcome back, {{ session.username }}!</li>
+                                <li><button onclick="window.location.href='{{'/resign' }}';">Log Out</button></li>
+                            {% else %}
+                                <li {% if request.path =='/assignment9' %}class="current-list-item" {% endif %}><a href="/assignment9">Assignment 9</a></li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>

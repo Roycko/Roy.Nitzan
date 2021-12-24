@@ -345,8 +345,6 @@ p {
   color: #F28123;
 }
 
-
-
 @media only screen and (max-width: 767.96px) {
   a.boxed-btn {
     padding: 7px 20px;
@@ -683,6 +681,15 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
+  background-color: #051922;
+  color: #F28123;
+}
+button {
+  transition: 0.3s;
+  border-radius: 50px !important;
+}
+
+button:hover {
   background-color: #051922;
   color: #F28123;
 }

@@ -12,8 +12,7 @@
 <body>
     {% include 'Loader.html' %}
     {% include 'header.html' %}
-    <h1 class="text-center">WELCOME to my {{ title | default ('Super Cool' ,True)}} page</h1>
-    {% block content %} {% endblock %}
+    {% block content %}    <h1 class="text-center">WELCOME to my {{ title | default ('Super Cool' ,True) | lower}} page</h1>{% endblock %}
     {% include 'footer.html' %}
 </body>
 </html>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }}  {% endblock %}
+{% block content %}
+
+    {% if session.username %}
+        <h2>Congratulations!!!</h2>
+        Welcome {{ session.username }} we are so happy to have you here!
+    {% else %}
+        {% if username %}
+            <h2>The user you've found is:</h2>
+            <b>Username:</b> {{ username }} <br> <b>Email:</b> {{ email }}
+        {% else %}
+            <h3>Please Search a User:</h3>
+            <form action="" method="get">
+                Username: <input name="user" type="text">
+                Email: <input name="email" type="email">
+                <input type="submit">
+            </form>
+            {% if users %}
+                    <h2>List of all users:</h2>
+                    {% for k,v in users.items() %}
+                        <b>Username:</b> {{ v.get('name')}} | <b>Email:</b> {{ v.get('email')}} <br>
+                    {% endfor %}
+            {% endif %}
+        {% endif %}
+
+        <h3>Register Now!</h3>
+        <form action="" method="post">
+            Username: <input name="user2" type="text">
+            Email: <input name="email2" type="email">
+            <input type="submit">
+        </form>
+    {% endif %}
+{% endblock %}
