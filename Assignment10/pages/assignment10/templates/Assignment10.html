@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }}  {% endblock %}
+{% block content %}
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+    <h1>Insert a User:</h1>
+    <form action="/insert_user" method="post">
+        <input type="text" name="name" placeholder="name">
+        <input type="email" name="email" placeholder="email">
+        <input type="submit" value="insert">
+    </form>
+    <br>
+    <h1>Insert a User:</h1>
+    <h2>Change user's name, identified by its email address:</h2>
+    <form action="/update_user" method="post">
+        <input type="text" name="name" placeholder="name">
+        <input type="email" name="email" placeholder="email">
+        <input type="submit" value="Update Name">
+    </form>
+    <br>
+    <h1>Delete a User:</h1>
+    <h2>Delete any user by its email:</h2>
+    <form action="/delete_user" method="post">
+        <input type="email" name="email" placeholder="email">
+        <input type="submit" value="Delete User">
+    </form>
+    <br>
+    <h1>View All Users:</h1>
+    {% for user in users %}
+        <p>Name : <b>{{ user[1] }}</b> Email: <b>{{ user[2] }}</b></p>
+    {% endfor %}
+{% endblock %}

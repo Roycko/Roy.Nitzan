@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }}  {% endblock %}
+{% block content %}
+    {{ super() }}
+    <ul>
+        <div class="col-lg-1 offset-lg-0 text-center">
+            {% for photo in  photos %}
+            <div class = 'product-image'><img src="{{photo}}" alt=""></div>
+            {% endfor %}
+        </div>
+    </ul>
+{% endblock %}
