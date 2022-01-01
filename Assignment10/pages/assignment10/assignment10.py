@@ -29,9 +29,14 @@ def insertUser():
 def updateUser():
     name = request.form['name']
     email = request.form['email']
-    query = "Update Users set name = '%s' where email='%s'" % (name,email)
-    interact_db(query=query , query_type= "commit")
-    flash(message="You have just added a user successfully !")
+    query2="select * from Users where email='%s';" % (email)
+    numOfUsers = interact_db(query=query2 , query_type= "fetch")
+    if len(numOfUsers) != 0:
+        query = "Update Users set name = '%s' where email='%s'" % (name, email)
+        interact_db(query=query, query_type="commit")
+        flash(message="You have just updated a user successfully !")
+    else:
+        flash(message="This Email address is NOT in the system!")
     return redirect('/assignment10')
 
 @assignment10.route('/delete_user', methods=['POST'])
@@ -44,5 +49,5 @@ def deleteUser():
         interact_db(query=query, query_type="commit")
         flash(message="The user was deleted from DB!")
     else:
-        flash(message="This Email address is not in the system!")
+        flash(message="This Email address is NOT in the system!")
     return redirect('/assignment10')
