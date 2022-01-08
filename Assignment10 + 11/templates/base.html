@@ -11,7 +11,7 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
-    {% include 'Loader.html' %}
+    {% include 'loader.html' %}
     {% include 'header.html' %}
     {% block content %}    <h1 class="text-center">WELCOME to my {{ title | default ('Super Cool' ,True) | lower}} page</h1>{% endblock %}
     {% include 'footer.html' %}

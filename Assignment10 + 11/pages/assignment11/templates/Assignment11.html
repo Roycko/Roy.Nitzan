@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }}  {% endblock %}
+{% block content %}
+    <h1>JSON of Users</h1>
+{#    {% for user in users %}#}
+    {% if users %}
+    {{ users }}
+    {% endif %}
+    <br>
+    <hr>
+{#    {% endfor %}#}
+    <h1>Get users by frontend:</h1>
+    <h2>Users List:</h2> <button onclick="getUsers()"> Get Users</button>
+    <main>
+
+    </main>
+    <script src="{{url_for('assignment11.static', filename='js/assignment11.js')}}"></script>
+    <hr>
+    <h1>Get users by Backend</h1>
+    <form action="/assignment11/outer_source" method="get">
+        <input type="number" name="id" placeholder="User ID">
+        <input type="submit" value="Get Users From Backend">
+    </form>
+    {% if user %}
+        <h5>ID: {{ user.data.id }}</h5>
+        <img src="{{ user.data.avatar }}" alt="Picture">
+        <p> <b>Name: </b>{{ user.data.first_name}} {{ user.data.last_name }}</p>
+    {% endif %}
+{% endblock %}
