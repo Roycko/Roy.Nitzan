@@ -31,6 +31,10 @@ app.register_blueprint(assignment10)
 from pages.assignment11.assignment11 import assignment11
 app.register_blueprint(assignment11)
 
+## Assignment12
+from pages.assignment12.assignment12 import assignment12
+app.register_blueprint(assignment12)
+
 ###### Components
 ## Header
 from components.header.header import header
